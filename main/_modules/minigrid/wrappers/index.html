@@ -10,7 +10,7 @@
     <meta property="og:url" content="https://minigrid.farama.org/_modules/minigrid/wrappers.html" /><meta property="og:image" content="https://minigrid.farama.org//_static/img/minigrid-github.png" /><meta name="twitter:card" content="summary_large_image"><link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
         <link rel="canonical" href="https://minigrid.farama.org/_modules/minigrid/wrappers.html" />
 
-    <link rel="shortcut icon" href="../../../_static/minigrid-favicon.png"/><!-- Generated with Sphinx 7.4.5 and Furo 2023.08.19.dev1 -->
+    <link rel="shortcut icon" href="../../../_static/minigrid-favicon.png"/><!-- Generated with Sphinx 7.4.7 and Furo 2023.08.19.dev1 -->
         <title>minigrid.wrappers - MiniGrid Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=3e7f4c72" />
@@ -297,9 +297,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/BlockedUnlockPickup/">Blocked Unlock Pickup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/UnlockToUnlock/">Unlock To Unlock</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/ActionObjDoor/">Action Obj Door</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/FindObjS5/">Find Obj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/FindObjS5/">Find Obj S5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/KeyCorridor/">Key Corridor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/OneRoomS8/">One Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/OneRoomS8/">One Room S8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/MoveTwoAcross/">Move Two Across</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/Synth/">Synth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/SynthLoc/">Synth Loc</a></li>
@@ -307,6 +307,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/MiniBossLevel/">Mini Boss Level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/BossLevel/">Boss Level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../environments/babyai/BossLevelNoUnlock/">Boss Level No Unlock</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../environments/wfc/">WFC Environments</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of WFC Environments</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../environments/wfc/WFCEnv/">WFC</a></li>
 </ul>
 </li>
 </ul>
@@ -365,8 +369,6 @@
 <span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 
 <span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">operator</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
 
 <span class="kn">import</span> <span class="nn">gymnasium</span> <span class="k">as</span> <span class="nn">gym</span>
@@ -989,7 +991,9 @@
             <span class="p">),</span> <span class="sa">f</span><span class="s2">&quot;mission string too long (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">mission</span><span class="p">)</span><span class="si">}</span><span class="s2"> chars)&quot;</span>
             <span class="n">mission</span> <span class="o">=</span> <span class="n">mission</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
-            <span class="n">str_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxStrLen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCharCodes</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span><span class="p">)</span>
+            <span class="n">str_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span>
+                <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maxStrLen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">numCharCodes</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;uint8&quot;</span>
+            <span class="p">)</span>
             <span class="c1"># as `numCharCodes` &lt; 255 then we can use `uint8`</span>
 
             <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mission</span><span class="p">):</span>

@@ -11,7 +11,7 @@
 <link rel="index" title="Index" href="genindex/" /><link rel="search" title="Search" href="search/" /><link rel="next" title="Basic Usage" href="content/basic_usage/" />
         <link rel="canonical" href="https://minigrid.farama.org/index.html" />
 
-    <link rel="shortcut icon" href="_static/minigrid-favicon.png"/><!-- Generated with Sphinx 7.4.5 and Furo 2023.08.19.dev1 -->
+    <link rel="shortcut icon" href="_static/minigrid-favicon.png"/><!-- Generated with Sphinx 7.4.7 and Furo 2023.08.19.dev1 -->
         <title>MiniGrid Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=3e7f4c72" />
@@ -298,9 +298,9 @@
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/BlockedUnlockPickup/">Blocked Unlock Pickup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/UnlockToUnlock/">Unlock To Unlock</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/ActionObjDoor/">Action Obj Door</a></li>
-<li class="toctree-l2"><a class="reference internal" href="environments/babyai/FindObjS5/">Find Obj</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments/babyai/FindObjS5/">Find Obj S5</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/KeyCorridor/">Key Corridor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="environments/babyai/OneRoomS8/">One Room</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments/babyai/OneRoomS8/">One Room S8</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/MoveTwoAcross/">Move Two Across</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/Synth/">Synth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/SynthLoc/">Synth Loc</a></li>
@@ -308,6 +308,10 @@
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/MiniBossLevel/">Mini Boss Level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/BossLevel/">Boss Level</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments/babyai/BossLevelNoUnlock/">Boss Level No Unlock</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="environments/wfc/">WFC Environments</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of WFC Environments</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="environments/wfc/WFCEnv/">WFC</a></li>
 </ul>
 </li>
 </ul>
@@ -399,11 +403,11 @@ Minigrid contains simple and easily configurable grid world environments to cond
 </pre></div>
 </div>
 <p>To cite this project please use:</p>
-<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@article</span><span class="p">{</span><span class="nl">MinigridMiniworld23</span><span class="p">,</span>
-<span class="w">  </span><span class="na">author</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">{Maxime Chevalier-Boisvert and Bolun Dai and Mark Towers and Rodrigo de Lazcano and Lucas Willems and Salem Lahlou and Suman Pal and Pablo Samuel Castro and Jordan Terry}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">title</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="s">{Minigrid \&amp; Miniworld: Modular \&amp; Customizable Reinforcement Learning Environments for Goal-Oriented Tasks}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">journal</span><span class="w">      </span><span class="p">=</span><span class="w"> </span><span class="s">{CoRR}</span><span class="p">,</span>
-<span class="w">  </span><span class="na">volume</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">{abs/2306.13831}</span><span class="p">,</span>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">MinigridMiniworld23</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">{Maxime Chevalier{-}Boisvert and Bolun Dai and Mark Towers and Rodrigo Perez{-}Vicente and Lucas Willems and Salem Lahlou and Suman Pal and Pablo Samuel Castro and Jordan Terry}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="s">{Minigrid {\&amp;} Miniworld: Modular {\&amp;} Customizable Reinforcement Learning Environments for Goal-Oriented Tasks}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">booktitle</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">{Advances in Neural Information Processing Systems 36, New Orleans, LA, USA}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">month</span><span class="w">        </span><span class="p">=</span><span class="w"> </span><span class="s">{December}</span><span class="p">,</span>
 <span class="w">  </span><span class="na">year</span><span class="w">         </span><span class="p">=</span><span class="w"> </span><span class="s">{2023}</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
