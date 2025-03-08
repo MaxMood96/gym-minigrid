@@ -13,9 +13,9 @@
 
     <link rel="shortcut icon" href="../../../_static/minigrid-favicon.png"/><!-- Generated with Sphinx 7.4.7 and Furo 2023.08.19.dev1 -->
         <title>Multi Room - MiniGrid Documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=3e7f4c72" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=49cbaffd" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=82c8b628" />
     
     
 
@@ -384,12 +384,9 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">Discrete(7)</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>Observation Space</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">Dict('direction':</span> <span class="pre">Discrete(4),</span> <span class="pre">'image':</span> <span class="pre">Box(0,</span> <span class="pre">255,</span> <span class="pre">(7,</span> <span class="pre">7,</span> <span class="pre">3),</span> <span class="pre">uint8),</span> <span class="pre">'mission':</span> <span class="pre">MissionSpace(&lt;function</span> <span class="pre">MultiRoomEnv._gen_mission</span> <span class="pre">at</span> <span class="pre">0x7f81fbc69040&gt;,</span> <span class="pre">None))</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Dict('direction':</span> <span class="pre">Discrete(4),</span> <span class="pre">'image':</span> <span class="pre">Box(0,</span> <span class="pre">255,</span> <span class="pre">(7,</span> <span class="pre">7,</span> <span class="pre">3),</span> <span class="pre">uint8),</span> <span class="pre">'mission':</span> <span class="pre">MissionSpace(&lt;function</span> <span class="pre">MultiRoomEnv._gen_mission</span> <span class="pre">at</span> <span class="pre">0x7fc76a867e50&gt;,</span> <span class="pre">None))</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Reward Range</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1)</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>Creation</p></td>
+<tr class="row-even"><td><p>Creation</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">gymnasium.make(&quot;MiniGrid-MultiRoom-N6-v0&quot;)</span></code></p></td>
 </tr>
 </tbody>
@@ -474,12 +471,21 @@ and building a curriculum, the environment can be solved.</p>
 </section>
 <section id="registered-configurations">
 <h2>Registered Configurations<a class="headerlink" href="#registered-configurations" title="Link to this heading">¶</a></h2>
-<p>S: size of map SxS.
-N: number of rooms.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">MiniGrid-MultiRoom-N2-S4-v0</span></code> (two small rooms)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">MiniGrid-MultiRoom-N4-S5-v0</span></code> (four rooms)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">MiniGrid-MultiRoom-N6-v0</span></code> (six rooms)</p></li>
+</ul>
+</section>
+<section id="arguments">
+<h2>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">minNumRooms</span></code>: The minimum number of rooms generated</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maxNumRooms</span></code>: The maximum number of rooms generated</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">maxRoomSize=10</span></code>: The maximum room size</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">width=25</span></code>: The width of the map</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">height=25</span></code>: The height of the map</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_steps=None</span></code>: If none, <code class="docutils literal notranslate"><span class="pre">maxNumRooms</span> <span class="pre">*</span> <span class="pre">20</span></code> else the integer passed</p></li>
 </ul>
 </section>
 </section>
@@ -561,6 +567,7 @@ N: number of rooms.</p>
 <li><a class="reference internal" href="#rewards">Rewards</a></li>
 <li><a class="reference internal" href="#termination">Termination</a></li>
 <li><a class="reference internal" href="#registered-configurations">Registered Configurations</a></li>
+<li><a class="reference internal" href="#arguments">Arguments</a></li>
 </ul>
 </li>
 </ul>
@@ -647,7 +654,7 @@ N: number of rooms.</p>
         })()
       </script>
 
-    <script src="../../../_static/documentation_options.js?v=7fa42598"></script>
+    <script src="../../../_static/documentation_options.js?v=e34a887a"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=7660844c"></script>
